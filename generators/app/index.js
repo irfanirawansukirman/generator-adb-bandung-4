@@ -26,7 +26,8 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(this.templatePath('sample.zip'), this.destinationPath('sample.zip'));
+    this.fs.copy(this.templatePath('sample.zip'),
+    this.destinationPath('sample.zip'));
   }
 
   install() {
