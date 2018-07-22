@@ -10,7 +10,7 @@ describe('generator-adb-bandung-4:app', () => {
       .withPrompts({ someAnswer: true });
   });
 
-  it('creates files', () => {
-    assert.file(['dummyfile.txt']);
-  });
+  // it('creates files', () => {
+  //   assert.file(['dummyfile.txt']);
+  // });
 });
