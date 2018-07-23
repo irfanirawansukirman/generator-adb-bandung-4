@@ -59,8 +59,10 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "prepublishOnly": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest"
   },
   "lint-staged": {
     "*.js": [
