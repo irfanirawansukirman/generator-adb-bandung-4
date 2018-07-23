@@ -1,16 +1,18 @@
 'use strict';
-const Generator = require('yeoman-generator');
+
+const yeoman = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const mkdirp = require('mkdirp');
 
-module.exports = class extends Generator {
-  prompting() {
-    // Have Yeoman greet the user.
+module.exports = yeoman.Base.extend({
+  initializing: function() {
+    this.props = {};
+  },
+  prompting: function() {
     this.log(
-      yosay(`Welcome to the groovy ${chalk.red('generator-adb-bandung-4')} generator!`)
+      yosay('Welcome to the rad ' + chalk.red('Android Boilerplate ') + ' generator!')
     );
-
     const prompts = [
       {
         name: 'name',
@@ -54,15 +56,15 @@ module.exports = class extends Generator {
     ];
 
     return this.prompt(prompts).then(props => {
-      this.appPackage = props.package;
+      this.props.appPackage = props.package;
       this.appName = props.name;
       this.appPackage = props.package;
       this.androidTargetSdkVersion = props.targetSdk;
       this.androidMinSdkVersion = props.minSdk;
     });
-  }
+  },
 
-  writing() {
+  writing: function() {
     var packageDir = this.props.appPackage.replace(/\./g, '/');
     mkdirp('app');
     mkdirp('app/src/androidTest/java/' + packageDir);
@@ -123,8 +125,4 @@ module.exports = class extends Generator {
       {}
     );
   }
-
-  install() {
-    this.installDependencies();
-  }
-};
+});
