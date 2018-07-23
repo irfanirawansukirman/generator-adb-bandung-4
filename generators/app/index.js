@@ -1,9 +1,9 @@
 'use strict';
 
 const yeoman = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 const mkdirp = require('mkdirp');
+const yosay = require('yosay');
+const chalk = require('chalk');
 
 module.exports = yeoman.Base.extend({
   initializing: function() {
