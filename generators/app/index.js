@@ -5,11 +5,7 @@ const yosay = require('yosay');
 const mkdirp = require('mkdirp');
 
 module.exports = class extends Generator {
-  initializing(){
-    this.props={};
-  },
-
-  prompting() {
+   prompting() {
     // Have Yeoman greet the user.
     this.log(
       yosay(`Welcome to the groovy ${chalk.red('generator-adb-bandung-4')} generator!`)
