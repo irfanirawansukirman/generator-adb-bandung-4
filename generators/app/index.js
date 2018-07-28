@@ -18,7 +18,7 @@ module.exports = yeoman.Base.extend({
         name: 'name',
         message: 'Apa nama aplikasi Anda?',
         store: true,
-        default: this.appname,
+        default: 'Android_MVVM_Movie',
         validate: function(input) {
           if (/^([a-zA-Z0-9_]*)$/.test(input)) {
             return true;
@@ -71,8 +71,6 @@ module.exports = yeoman.Base.extend({
     mkdirp('app/src/test/java/' + packageDir);
 
     this.directory('gradle', 'gradle');
-    this.directory('config', 'config');
-    this.directory('images', 'images');
     this.directory('app/src/main/res', 'app/src/main/res');
 
     this.copy('gitignore', '.gitignore');
@@ -97,10 +95,6 @@ module.exports = yeoman.Base.extend({
       'app/src/commonTest/java/' + packageDir,
       this,
       {}
-    );
-    this.template(
-      'app/src/debug/AndroidManifest.xml',
-      'app/src/debug/AndroidManifest.xml'
     );
     this.template('app/src/main/AndroidManifest.xml', 'app/src/main/AndroidManifest.xml');
     this.template(
