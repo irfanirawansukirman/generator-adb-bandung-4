@@ -64,11 +64,8 @@ module.exports = yeoman.Base.extend({
   writing: function() {
     var packageDir = this.props.appPackage.replace(/\./g, '/');
     mkdirp('app');
-    mkdirp('app/src/androidTest/java/' + packageDir);
     mkdirp('app/src/main/res');
     mkdirp('app/src/main/java/' + packageDir);
-    mkdirp('app/src/test/java/' + packageDir);
-    mkdirp('app/src/test/java/' + packageDir);
 
     this.directory('gradle', 'gradle');
     this.directory('app/src/main/res', 'app/src/main/res');
