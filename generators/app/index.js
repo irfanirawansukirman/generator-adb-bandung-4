@@ -89,11 +89,5 @@ module.exports = yeoman.Base.extend({
       {}
     );
     this.template('app/src/main/res/layout', 'app/src/main/res/layout', this, {});
-    this.template(
-      'app/src/test/java/id/co/gits/mvvmstarterkit',
-      'app/src/test/java/' + packageDir,
-      this,
-      {}
-    );
   }
 });
