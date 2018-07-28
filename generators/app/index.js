@@ -84,18 +84,6 @@ module.exports = yeoman.Base.extend({
 
     this.template('README.md', 'README.md');
     this.template('app/build.gradle', 'app/build.gradle');
-    this.template(
-      'app/src/androidTest/java/id/co/gits/mvvmstarterkit',
-      'app/src/androidTest/java/' + packageDir,
-      this,
-      {}
-    );
-    this.template(
-      'app/src/commonTest/java/id/co/gits/mvvmstarterkit',
-      'app/src/commonTest/java/' + packageDir,
-      this,
-      {}
-    );
     this.template('app/src/main/AndroidManifest.xml', 'app/src/main/AndroidManifest.xml');
     this.template(
       'app/src/main/java/id/co/gits/mvvmstarterkit',
